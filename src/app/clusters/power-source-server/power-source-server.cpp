@@ -109,6 +109,10 @@ CHIP_ERROR PowerSourceAttrAccess::Read(const ConcreteReadAttributePath & aPath, 
         // TODO: Needs implementation.
         err = aEncoder.EncodeEmptyList();
         break;
+    case ActiveBatChargeFaults::Id: {
+        err = aEncoder.EncodeEmptyList();
+        break;
+    }
     case EndpointList::Id: {
         PowerSourceServer & server    = PowerSourceServer::Instance();
         const Span<EndpointId> * span = server.GetEndpointList(aPath.mEndpointId);
